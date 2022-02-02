@@ -14,6 +14,7 @@
 		EB67D2EB27AA955100D70158 /* FactoryCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB67D2EA27AA955100D70158 /* FactoryCourse.swift */; };
 		EB67D2ED27AA956600D70158 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB67D2EC27AA956600D70158 /* Course.swift */; };
 		EB67D2EF27AA9BD700D70158 /* DetailViewCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB67D2EE27AA9BD700D70158 /* DetailViewCourse.swift */; };
+		EB67D2F127AAD94400D70158 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB67D2F027AAD94400D70158 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		EB67D2EA27AA955100D70158 /* FactoryCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryCourse.swift; sourceTree = "<group>"; };
 		EB67D2EC27AA956600D70158 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		EB67D2EE27AA9BD700D70158 /* DetailViewCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCourse.swift; sourceTree = "<group>"; };
+		EB67D2F027AAD94400D70158 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				EB67D2DC27AA93B400D70158 /* ContentView.swift */,
 				EB67D2EE27AA9BD700D70158 /* DetailViewCourse.swift */,
+				EB67D2F027AAD94400D70158 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				EB67D2ED27AA956600D70158 /* Course.swift in Sources */,
 				EB67D2EF27AA9BD700D70158 /* DetailViewCourse.swift in Sources */,
 				EB67D2EB27AA955100D70158 /* FactoryCourse.swift in Sources */,
+				EB67D2F127AAD94400D70158 /* SettingsView.swift in Sources */,
 				EB67D2DD27AA93B400D70158 /* ContentView.swift in Sources */,
 				EB67D2DB27AA93B400D70158 /* CoursesApp.swift in Sources */,
 			);

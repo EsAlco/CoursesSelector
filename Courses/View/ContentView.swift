@@ -11,13 +11,15 @@ struct ContentView: View {
     
     @State private var selectedCourse: Course?
     
+    
+    
     var body: some View {
         NavigationView{
             VStack{
                 List{
                     ForEach(CourseFactory.courses){ Course in
                         ZStack{
-                            CourseRoundImageRow(course:  Course)
+                            CourseRoundImageRow(course: Course)
                             
                                 .contextMenu{
                                     
@@ -54,17 +56,38 @@ struct ContentView: View {
                                 .onTapGesture{
                                     self.selectedCourse = Course
                                 }
+                                .actionSheet(item: self.$selectedCourse){ Course in
+                                    ActionSheet(title: Text("Acción a realizar"),
+                                message: nil,
+                                buttons: [
+                                    .default(Text(Course.featured ? "Desmarcar como favorito" : "Marcar como favorito")) {
+                                            self.setFeatured(item: Course)
+                                        }
+                                    ,.default(Text(Course.purchased ? "Devolver" : "Comprar")) {
+                                        self.setPurchased(item: Course)
+                                    }
+                                    ,
+                                    .default(Text("Ir al curso")) {
+                                        DetailViewCourse(courses: Course)
+                                        }
+                                    ,
+                                    .destructive(Text("Eliminar curso")) {
+                                            self.delete(item: Course)
+                                        }
+                                    ,
+                                    .cancel()
+                                ])
+                            }
                         }
+                        
                     }
                     .onDelete{ (indexSet) in
                         CourseFactory.courses.remove(atOffsets: indexSet)
                     }
+                    
                 }
                 .navigationBarTitle("Cursos formativos")
                 
-                .sheet(item: self.$selectedCourse){ courses in
-                    DetailViewCourse(courses: courses)
-                }
             }
         }
     }

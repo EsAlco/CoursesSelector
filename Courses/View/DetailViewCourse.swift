@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailViewCourse: View {
     
     @Environment (\.presentationMode) var presentationMode
+    
     var courses: Course
     
     var body: some View {

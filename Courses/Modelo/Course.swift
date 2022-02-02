@@ -1,6 +1,6 @@
 //
 //  Course.swift
-//  Courses
+//  Course
 //
 //  Created by Esther Alcoceba Gutiérrez de León on 2/2/22.
 //
