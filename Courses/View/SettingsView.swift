@@ -11,6 +11,8 @@ struct SettingsView: View {
     
     private var sortingOrders = ["Alfabéticamente", "Los favoritos al inicio", "Los comprados al inicio"]
     
+    @Environment (\.presentationMode) var presentationMode
+    
     @State private var selectedOrder = 0
     @State private var showPurchasedOnly = false
     @State private var showFeaturedOnly = false
@@ -53,7 +55,27 @@ struct SettingsView: View {
                     }
                 }
             }
-        }.navigationTitle("Configuración")
+            .navigationTitle("Configuración")
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }, label:{
+                        Image(systemName: "xmark.shield")
+                            .font(.title)
+                            .foregroundColor(.red)
+                    }),
+                trailing:
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                }, label:{
+                    Image(systemName: "checkmark.shield")
+                        .font(.title)
+                        .foregroundColor(.green)
+                })
+                    
+            )
+        }
     }
 }
 
