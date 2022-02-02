@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var selectedCourse: Course?
-    
+    @State private var showSettingsView: Bool = false
     
     
     var body: some View {
@@ -87,7 +87,18 @@ struct ContentView: View {
                     
                 }
                 .navigationBarTitle("Cursos formativos")
-                
+                .navigationBarItems(trailing:
+                    Button(action: {
+                    self.showSettingsView = true
+                    }, label: {
+                        Image(systemName: "gear")
+                            .font(.title)
+                            .foregroundColor(.black)
+                    })
+                )
+                .sheet(isPresented: $showSettingsView){
+                    SettingsView()
+                }
             }
         }
     }

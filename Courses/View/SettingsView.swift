@@ -13,6 +13,7 @@ struct SettingsView: View {
     
     @State private var selectedOrder = 0
     @State private var showPurchasedOnly = false
+    @State private var showFeaturedOnly = false
     @State private var maxPrice = 5{
         didSet{
             if maxPrice > 5{
@@ -36,7 +37,12 @@ struct SettingsView: View {
                 }
                 Section(header: Text("FILTRAR LOS CURSOS")){
                     Toggle(isOn:$showPurchasedOnly){
-                        Text("Mostrar cursos comprados")
+                        Text("Mostrar sólo comprados")
+                        Image(systemName: "checkmark")
+                    }
+                    Toggle(isOn:$showFeaturedOnly){
+                        Text("Mostrar sólo favoritos")
+                        Image(systemName: "star")
                     }
                     Stepper(onIncrement: {
                         self.maxPrice += 1
